@@ -15,7 +15,7 @@ db.query('INSERT INTO authors SET ?', author, (err, res) => {
   console.log('Last insert ID:', res.insertId);
 });
 
-con.query(
+db.query(
   'UPDATE authors SET city = ? Where ID = ?',
   ['Leipzig', 3],
   (err, result) => {
@@ -24,7 +24,7 @@ con.query(
   }
 );
 
-con.query(
+db.query(
   'DELETE FROM authors WHERE id = ?', [5], (err, result) => {
     if (err) throw err;
     console.log(`Deleted ${result.affectedRows} row(s)`);
