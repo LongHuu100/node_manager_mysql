@@ -3,7 +3,6 @@
 
 db.query('SELECT * FROM authors', (err,rows) => {
   if(err) throw err;
-
   console.log('Data received from Db:');
   console.log(rows);
 });
@@ -11,7 +10,6 @@ db.query('SELECT * FROM authors', (err,rows) => {
 const author = { name: 'Craig Buckler', city: 'Exmouth' };
 db.query('INSERT INTO authors SET ?', author, (err, res) => {
   if(err) throw err;
-
   console.log('Last insert ID:', res.insertId);
 });
 
